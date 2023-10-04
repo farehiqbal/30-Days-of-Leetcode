@@ -1,15 +1,17 @@
 class Solution {
     public int arraySign(int[] nums) {
         
-        double product = 1.0;
-
-        for(int i =0; i< nums.length; i++){
-            product *= nums[i];
+        int negativeNumbers = 0;
+        
+        for(int i = 0; i < nums.length; i++){
+            
+            if(nums[i] == 0) return 0;
+            
+            if(nums[i] < 0) negativeNumbers++;
         }
-
-        if(product > 0) return 1;
-        if(product < 0) return -1;
-
-        return 0;
+        
+        
+        // check if even
+        return negativeNumbers % 2 == 0? 1 : -1;
     }
 }
